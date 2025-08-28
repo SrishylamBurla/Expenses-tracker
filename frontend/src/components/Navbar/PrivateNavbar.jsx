@@ -102,6 +102,80 @@ export default function PrivateNavbar() {
 
           {/* Mobile Nav */}
           <Disclosure.Panel className="md:hidden">
+            {({ close }) => (
+              <>
+                <div className="space-y-1 px-2 pt-2 pb-3">
+                  <Disclosure.Button
+                    as={Link}
+                    to="/"
+                    className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md"
+                    onClick={() => close()}
+                  >
+                    MasyncTracker
+                  </Disclosure.Button>
+
+                  <Disclosure.Button
+                    as={Link}
+                    to="/add-transaction"
+                    className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md"
+                    onClick={() => close()}
+                  >
+                    Add Transaction
+                  </Disclosure.Button>
+
+                  <Disclosure.Button
+                    as={Link}
+                    to="/add-category"
+                    className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md"
+                    onClick={() => close()}
+                  >
+                    Add Category
+                  </Disclosure.Button>
+
+                  <Disclosure.Button
+                    as={Link}
+                    to="/categories"
+                    className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md"
+                    onClick={() => close()}
+                  >
+                    Categories
+                  </Disclosure.Button>
+
+                  <Disclosure.Button
+                    as={Link}
+                    to="/profile"
+                    className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md"
+                    onClick={() => close()}
+                  >
+                    Profile
+                  </Disclosure.Button>
+
+                  <Disclosure.Button
+                    as={Link}
+                    to="/dashboard"
+                    className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md"
+                    onClick={() => close()}
+                  >
+                    Dashboard
+                  </Disclosure.Button>
+                </div>
+
+                <div className="border-t border-gray-200 px-2 py-3">
+                  <button
+                    onClick={() => {
+                      logoutHandler();
+                      close(); // 👈 also closes menu after logout
+                    }}
+                    className="block w-full text-left text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md"
+                  >
+                    Sign out
+                  </button>
+                </div>
+              </>
+            )}
+          </Disclosure.Panel>
+
+          {/* <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               <Link to="/" className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md">
                 MasyncTracker
@@ -131,7 +205,7 @@ export default function PrivateNavbar() {
                 Sign out
               </button>
             </div>
-          </Disclosure.Panel>
+          </Disclosure.Panel> */}
         </>
       )}
     </Disclosure>

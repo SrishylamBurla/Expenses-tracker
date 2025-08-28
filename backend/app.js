@@ -21,7 +21,7 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://expenses-tracker-iygh.vercel.app", // your Vercel frontend
+  "https://expenses-tracker-iygh.vercel.app",
 ];
 
 app.use(cors({
