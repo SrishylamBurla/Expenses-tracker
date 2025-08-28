@@ -5,7 +5,7 @@ import getUserFromStorage from "../../utils/getUserFromStorage";
 export const addCategoryAPI = async ({ type, name }) => {
   const token = getUserFromStorage();
   const response = await axios.post(
-    `${BASE_URL}/categories/create`,
+    `${BASE_URL}/api/categories/create`,
     {
       type,
       name,
@@ -21,7 +21,7 @@ export const addCategoryAPI = async ({ type, name }) => {
 
 export const getCategoryByIdAPI = async (id) => {
   const token = getUserFromStorage();
-  const response = await axios.get(`${BASE_URL}/categories/${id}`, {
+  const response = await axios.get(`${BASE_URL}/api/categories/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -31,7 +31,7 @@ export const getCategoryByIdAPI = async (id) => {
 
 export const listCategoriesAPI = async () => {
   const token = getUserFromStorage();
-  const response = await axios.get(`${BASE_URL}/categories/list`, {
+  const response = await axios.get(`${BASE_URL}/api/categories/list`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -42,7 +42,7 @@ export const listCategoriesAPI = async () => {
 export const updateCategoryAPI = async ({ type, name, id }) => {
   const token = getUserFromStorage();
   const response = await axios.put(
-    `${BASE_URL}/categories/update/${id}`,
+    `${BASE_URL}/api/categories/update/${id}`,
     {
       type,
       name,
@@ -59,7 +59,7 @@ export const updateCategoryAPI = async ({ type, name, id }) => {
 
 export const deleteCategoryAPI = async (id) => {
   const token = getUserFromStorage();
-  const response = await axios.delete(`${BASE_URL}/categories/delete/${id}`, {
+  const response = await axios.delete(`${BASE_URL}/api/categories/delete/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
