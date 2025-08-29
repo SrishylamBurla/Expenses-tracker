@@ -10,7 +10,11 @@ import {
 import { IoIosStats } from "react-icons/io";
 import { FaFilter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import getUserFromStorage from "../../utils/getUserFromStorage";
 const HeroSection = () => {
+
+  const token = getUserFromStorage()
+
   return (
     <>
       <div className="bg-gradient-to-r from-green-400 to-blue-500 text-white py-20 px-4">
@@ -42,11 +46,13 @@ const HeroSection = () => {
           </div>
 
           {/* Call to Action Button */}
+          { !token && 
           <Link to="/register">
             <button className="mt-8 px-6 py-3 bg-white text-green-500 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition duration-300">
               Get Started
             </button>
           </Link>
+          }
         </div>
       </div>
       {/* How it works */}
