@@ -50,7 +50,7 @@ export default function PrivateNavbar() {
                   to="/"
                   className="text-sm font-medium text-gray-900 border-b-2 border-indigo-500"
                 >
-                  MasyncTracker
+                  FinanceTracker
                 </Link>
                 <Link
                   to="/add-transaction"
